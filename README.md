@@ -64,7 +64,7 @@ By leveraging Python's  libraries such as NumPy, Pandas, Matplotlib, Statsmodels
 
 
 ### Optimal ARIMA Orders
-[Optimal ARIMA Orders Clean](csv/arima_optimal_orders_clean.csv)
+[Optimal ARIMA Orders Clean](csv/arima_optimal_orders_clean.csv)<br>
 [Optimal ARIMA Orders Artifacts](csv/arima_optimal_orders_artifact.csv)
 
 ### Scatterplots of Orders (Clean vs Artifact)
