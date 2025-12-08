@@ -23,6 +23,7 @@ Time-series analysis and forecasting of EEG data (ICP, AMP, and RAP) using ARIMA
 - [About](#about)
 - [Features](#features)
 - [Data](#data)
+- [Method](#method)
 - [Result](#result)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
