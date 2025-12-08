@@ -22,6 +22,7 @@ Time-series analysis and forecasting of EEG data (ICP, AMP, and RAP) using ARIMA
 
 - [About](#about)
 - [Features](#features)
+- [Data](#data)
 - [Result](#result)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
@@ -44,9 +45,12 @@ By leveraging Python's  libraries such as NumPy, Pandas, Matplotlib, Statsmodels
 - 🎯 **Time-Series Analysis**: Comprehensive analysis of EEG data (ICP, AMP, RAP) using ARIMA models.
 - 🎨 **Visualization**: Clear and informative visualizations of time-series data, model forecasts, and residuals.
 - 📈 **Forecasting**: Predict future EEG data values using fitted ARIMA models.
-- 🔒 **Artifact Detection **: Methods and features to identify and mitigate artifacts in EEG data.
+- 🔒 **Artifact Detection**: Methods and features to identify and mitigate artifacts in EEG data.
 - 🛠️ **Customizable**: Modular code structure allows for easy customization and extension.
 
+## Data
+
+The data were retrospectively obtained from the TBI database prospectively maintained at the Multi-omic Analytics and Integrative Neuroinformatics in the HUman Brain (MAIN-HUB) Lab at the University of Manitoba. This study included patient data collected from January 2018 to March 2023. 
 
 ## Result
 
@@ -108,7 +112,7 @@ ARIMA-Modeling-on-EEG-Time-Series-Data/
 
 ## Associated Publication
 
-[Characterization of RAP Signal Patterns, Temporal Relationships, and Artifact Profiles Derived from Intracranial Pressure Sensors in Acute Traumatic Neural Injury](https://www.mdpi.com/1424-8220/25/2/586)
+For more information please visit: [Characterization of RAP Signal Patterns, Temporal Relationships, and Artifact Profiles Derived from Intracranial Pressure Sensors in Acute Traumatic Neural Injury](https://www.mdpi.com/1424-8220/25/2/586)
 
 ## Contributing
 
@@ -136,4 +140,4 @@ Contributions are welcome!
   - [Statsmodels](https://www.statsmodels.org/stable/index.html) - Statistical modeling library
   - [Scikit-learn](https://scikit-learn.org/stable/) - Machine learning library
   - 
-🌟 Special thanks: to the Main-Hub Laboratory, University of Manitoba, for their great support.
+🌟 Special thanks: to the MAIN-HUB Laboratory at the University of Manitoba, for their great support.
