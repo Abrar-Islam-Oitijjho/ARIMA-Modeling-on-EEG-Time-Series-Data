@@ -52,6 +52,87 @@ By leveraging Python's  libraries such as NumPy, Pandas, Matplotlib, Statsmodels
 
 The data were retrospectively obtained from the TBI database prospectively maintained at the Multi-omic Analytics and Integrative Neuroinformatics in the HUman Brain (MAIN-HUB) Lab at the University of Manitoba. This study included patient data collected from January 2018 to March 2023. 
 
+## Method
+
+```text
+
+├── 1. ARIMA Modeling
+│   │
+│   ├── 1.1 ARIMA Framework
+│   │   ├── Uses AR (p), differencing (d), and MA (q)
+│   │   ├── Captures temporal structure of physiological signals
+│   │   ├── ARIMA(p, d, q) fitted for each signal per patient
+│   │   └── p, q ∈ [0,10] based on previous lab studies
+│   │
+│   ├── 1.2 Model Equation
+│   │   └── Xt = c + εt + Σ φi Xt−i + Σ θj εt−j
+│   │
+│   ├── 1.3 Model Selection
+│   │   ├── Evaluated all p, q combinations (d = 0 after differencing)
+│   │   ├── Used statsmodels ARIMA implementation
+│   │   └── Optimal model chosen using AIC score
+│   │
+│   └── 1.4 Statistical Metrics
+│       ├── AIC → balanced metric for model fit
+│       ├── BIC → more conservative, penalizes complexity
+│       └── Log-Likelihood → measures model fit without penalties
+│
+├── 2. Stationarity Analysis
+│   │
+│   ├── 2.1 Tests Used
+│   │   ├── Augmented Dickey–Fuller (ADF)
+│   │   └── Kwiatkowski–Phillips–Schmidt–Shin (KPSS)
+│   │
+│   ├── 2.2 Decision Rule (threshold = 0.05)
+│   │   ├── ADF p-value < 0.05 → stationary
+│   │   └── KPSS p-value > 0.05 → stationary
+│   │
+│   └── 2.3 Application
+│       ├── Tests applied to each patient's raw data
+│       └── Tests repeated on first-order differenced data
+│
+├── 3. Temporal Resolution Generation
+│   │
+│   ├── 3.1 Primary Resolution
+│   │   └── Minute-by-minute derived signals (ICP, AMP, RAP)
+│   │
+│   ├── 3.2 Downsampled Resolutions
+│   │   ├── 10-minute intervals → mean of 10 consecutive points
+│   │   ├── 30-minute intervals → mean of 30 points
+│   │   └── 60-minute intervals → mean of 60 points
+│   │
+│   └── 3.3 Tools Used
+│       └── pandas resample() for downsampling
+│
+├── 4. Model Evaluation
+│   │
+│   ├── 4.1 Median Optimal Model
+│   │   ├── Compute median p and q across all patients
+│   │   └── Used as population-level representative model
+│   │
+│   ├── 4.2 Diagnostics
+│   │   ├── Residual magnitude
+│   │   ├── ACF of residuals
+│   │   ├── PACF of residuals
+│   │   └── Count of significant spikes
+│   │
+│   └── 4.3 Model Quality Criteria
+│       ├── Small residuals → good fit
+│       └── No significant ACF/PACF spikes → structure captured
+│
+└── 5. RAP Artifact Segment Analysis
+    │
+    ├── 5.1 Artifact Identification
+    │   ├── Experts previously created “clean” datasets
+    │   ├── Non-clean data contain additional segments
+    │   └── Difference (non-clean minus clean timestamps) → true artifacts
+    │
+    └── 5.2 Artifact Extraction
+        ├── Extract each artifact segment based on timestamps
+        └── Save segments as individual CSV files
+
+```
+
 ## Result
 
 ### ACF and PACF Plots of Residuals Before ARIMA
