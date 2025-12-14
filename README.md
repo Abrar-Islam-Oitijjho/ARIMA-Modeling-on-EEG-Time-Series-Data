@@ -139,7 +139,7 @@ The data were retrospectively obtained from the TBI database prospectively maint
 ### ACF and PACF Plots of Residuals Before ARIMA
 ![ACF and PACF](plot/acf_pacf_org.jpg)
 
-### ACF and PACF Plots of Residuals Before ARIMA
+### ACF and PACF Plots of Residuals After ARIMA
 ![ACF and PACF](plot/acf_pacf_ordered.jpg)
 
 ### Stationarity Check (p-values)
